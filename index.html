@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="hero">
+    <h1 class="hero-title">{{ site.title }}</h1>
+    <p class="hero-description">{{ site.description }}</p>
+  </div>
+
+  <div class="posts">
+    <h2 class="posts-title">최근 포스트</h2>
+    
+    <ul class="post-list">
+      {% for post in site.posts limit: 5 %}
+      <li class="post-item">
+        <article class="post-card">
+          <div class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%Y년 %m월 %d일" }}
+            </time>
+            {% if post.categories %}
+            <span class="post-categories">
+              {% for category in post.categories %}
+              <span class="category-tag">{{ category }}</span>
+              {% endfor %}
+            </span>
+            {% endif %}
+          </div>
+          <h3 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <p class="post-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          </p>
+          <a href="{{ post.url | relative_url }}" class="read-more">더 읽기 →</a>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <div class="more-posts">
+      <a href="/blog" class="btn">모든 포스트 보기</a>
+    </div>
+  </div>
+</div>
+

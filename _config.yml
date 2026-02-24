@@ -1,0 +1,54 @@
+# Site Settings
+title: "기술 블로그"
+description: "개발과 기술에 대한 생각을 기록하는 공간"
+url: "https://jm111ah.github.io"
+baseurl: ""
+
+# Author
+author:
+  name: "Your Name"
+  email: "your.email@example.com"
+  github: "jm111ah"
+  twitter: "" # Twitter 사용자명 (선택사항)
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .git
+  - .gitignore
+  - README.md
+  - README-GIT-SETUP.md
+  - setup-git.sh
+
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Social Media
+social:
+  github: jm111ah
+  twitter: ""
+
+# Navigation
+navigation:
+  - title: "홈"
+    url: /
+  - title: "블로그"
+    url: /blog
+  - title: "소개"
+    url: /about
+
