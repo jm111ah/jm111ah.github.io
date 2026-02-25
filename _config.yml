@@ -43,6 +43,11 @@ social:
   github: jm111ah
   twitter: ""
 
+# Google Search Console Verification
+# Google Search Console에서 메타 태그를 받으면 아래에 추가하세요
+# 예: google_site_verification: "abc123xyz..."
+google_site_verification: "" # Google Search Console 메타 태그 값
+
 # Navigation
 navigation:
   - title: "홈"
