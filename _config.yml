@@ -1,15 +1,30 @@
 # Site Settings
-title: "기술 블로그"
-description: "개발과 기술에 대한 생각을 기록하는 공간"
+title: "개인 기술 블로그" # 원하는 제목으로 변경하세요 (예: "홍길동의 기술 블로그")
+description: "개발과 기술에 대한 생각을 기록하는 공간" # 블로그 설명
 url: "https://jm111ah.github.io"
 baseurl: ""
 
-# Author
+# Author - 개인 브랜딩을 위한 상세 정보
 author:
-  name: "Your Name"
+  name: "Your Name" # 본인 이름으로 변경하세요
+  role: "웹 개발자" # 직업/역할
+  bio: "개발과 기술에 관심이 많은 개발자입니다. 지속적인 학습과 성장을 추구하며, 새로운 기술을 배우고 적용하는 것을 즐깁니다." # 간단한 자기소개
   email: "your.email@example.com"
   github: "jm111ah"
   twitter: "" # Twitter 사용자명 (선택사항)
+  linkedin: "" # LinkedIn 사용자명 (선택사항)
+  
+  # 기술 스택 (선택사항 - 원하는 대로 수정하세요)
+  skills:
+    frontend: [] # 예: ["React", "Vue.js", "TypeScript", "HTML/CSS"]
+    backend: [] # 예: [".NET", "C#", "Node.js", "Python"]
+    tools: [] # 예: ["Git", "Docker", "AWS", "Jekyll"]
+  
+  # 관심 분야 (선택사항)
+  interests: [] # 예: ["웹 개발", "AI/ML", "클라우드", "오픈소스"]
+  
+  # 경력/경험 (선택사항)
+  experience: [] # 예: [{"title": "시니어 개발자", "company": "회사명", "period": "2020-현재", "description": "설명"}]
 
 # Build Settings
 markdown: kramdown
