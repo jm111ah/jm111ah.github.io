@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jm111ah.github.io/sitemap.xml
+
