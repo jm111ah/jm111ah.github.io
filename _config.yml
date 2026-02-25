@@ -1,31 +1,30 @@
 # Site Settings
-title: "개인 기술 블로그" # 원하는 제목으로 변경하세요 (예: "홍길동의 기술 블로그")
-description: "개발과 기술에 대한 생각을 기록하는 공간" # 블로그 설명
+title: "정성균의 기술 블로그" # 원하는 제목으로 변경하세요 (예: "홍길동의 기술 블로그")
+description: "웹 개발자 정성균의 기술 블로그입니다. 개발 경험, 학습 내용, 프로젝트 이야기를 공유합니다." # 블로그 설명
 url: "https://jm111ah.github.io"
 baseurl: ""
 
 # Author - 개인 브랜딩을 위한 상세 정보
 author:
-  name: "Your Name" # 본인 이름으로 변경하세요
+  name: "정성균" # 본인 이름으로 변경하세요
   role: "웹 개발자" # 직업/역할
-  bio: "개발과 기술에 관심이 많은 개발자입니다. 지속적인 학습과 성장을 추구하며, 새로운 기술을 배우고 적용하는 것을 즐깁니다." # 간단한 자기소개
-  email: "your.email@example.com"
+  bio: ".NET과 C#을 기반으로 웹 개발을 하고 있습니다. AI 시대에 개발자로서의 위치를 고민하며, 지속적인 학습과 성장을 추구합니다. 새로운 기술을 배우고 적용하는 것을 즐기며, 개발 경험과 학습 내용을 블로그에 기록하고 있습니다." # 간단한 자기소개
+  email: "memoryman0107@gmail.com"
   github: "jm111ah"
   twitter: "" # Twitter 사용자명 (선택사항)
   linkedin: "" # LinkedIn 사용자명 (선택사항)
   
   # 기술 스택 (선택사항 - 원하는 대로 수정하세요)
   skills:
-    frontend: [] # 예: ["React", "Vue.js", "TypeScript", "HTML/CSS"]
-    backend: [] # 예: [".NET", "C#", "Node.js", "Python"]
-    tools: [] # 예: ["Git", "Docker", "AWS", "Jekyll"]
+    frontend: ["HTML/CSS","JavaScript","jQuery"] # 예: ["React", "Vue.js", "TypeScript", "HTML/CSS"]
+    backend: [".NET", "C#"] # 예: [".NET", "C#", "Node.js", "Python"]
+    tools: ["Git", "Docker", "AWS", "Jekyll"] # 예: ["Git", "Docker", "AWS", "Jekyll"]
   
   # 관심 분야 (선택사항)
-  interests: [] # 예: ["웹 개발", "AI/ML", "클라우드", "오픈소스"]
+  interests: ["웹 개발", "AI/ML", "클라우드", "오픈소스"] # 예: ["웹 개발", "AI/ML", "클라우드", "오픈소스"]
   
-  # 경력/경험 (선택사항)
-  experience: [] # 예: [{"title": "시니어 개발자", "company": "회사명", "period": "2020-현재", "description": "설명"}]
-
+  # 경력/경험 (선택사항 - 필요시 수정하세요)
+  experience: [] # 예: [{"title": "시니어 개발자", "company": "회사명", "period": "2020-현재", "description": "주요 업무 및 성과"}]
 # Build Settings
 markdown: kramdown
 highlighter: rouge
@@ -56,6 +55,7 @@ paginate_path: "/page:num/"
 # Social Media
 social:
   github: jm111ah
+  email: memoryman0107@gmail.com
   twitter: ""
 
 # Google Search Console Verification
