@@ -5,33 +5,84 @@ title: "블로그"
 
 <div class="blog-page">
   <h1>모든 포스트</h1>
-  
-  <ul class="post-list">
-    {% for post in site.posts %}
-    <li class="post-item">
-      <article class="post-card">
-        <div class="post-meta">
-          <time datetime="{{ post.date | date_to_xmlschema }}">
-            {{ post.date | date: "%Y년 %m월 %d일" }}
-          </time>
-          {% if post.categories %}
-          <span class="post-categories">
-            {% for category in post.categories %}
-            <span class="category-tag">{{ category }}</span>
-            {% endfor %}
-          </span>
-          {% endif %}
-        </div>
-        <h2 class="post-title">
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h2>
-        <p class="post-excerpt">
-          {{ post.excerpt | strip_html | truncatewords: 30 }}
-        </p>
-        <a href="{{ post.url | relative_url }}" class="read-more">더 읽기 →</a>
-      </article>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
 
+  {% assign uncategorized = site.posts | where_exp: "post", "post.categories.size == 0" %}
+
+  {% if site.categories.size > 0 or uncategorized.size > 0 %}
+  <nav class="blog-category-nav" aria-label="카테고리로 이동">
+    <span class="blog-category-nav-label">빠른 이동</span>
+    <div class="tags-list">
+      {% if uncategorized.size > 0 %}
+      <a href="#uncategorized" class="tag blog-category-jump">미분류 ({{ uncategorized.size }})</a>
+      {% endif %}
+      {% for cat_entry in site.categories %}
+      {% assign cname = cat_entry[0] %}
+      {% assign cposts = cat_entry[1] %}
+      <a href="#cat-{{ forloop.index }}" class="tag blog-category-jump">{{ cname }} ({{ cposts.size }})</a>
+      {% endfor %}
+    </div>
+  </nav>
+  {% endif %}
+
+  {% if uncategorized.size > 0 %}
+  <section class="blog-category-section" id="uncategorized">
+    <h2 class="blog-category-title">미분류</h2>
+    <ul class="post-list">
+      {% assign uc_sorted = uncategorized | sort: "date" | reverse %}
+      {% for post in uc_sorted %}
+      <li class="post-item">
+        <article class="post-card">
+          <div class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%Y년 %m월 %d일" }}
+            </time>
+          </div>
+          <h2 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h2>
+          <p class="post-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          </p>
+          <a href="{{ post.url | relative_url }}" class="read-more">더 읽기 →</a>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% for cat_entry in site.categories %}
+  {% assign cname = cat_entry[0] %}
+  {% assign cat_posts = cat_entry[1] | sort: "date" | reverse %}
+  <section class="blog-category-section" id="cat-{{ forloop.index }}">
+    <h2 class="blog-category-title">{{ cname }}</h2>
+    <ul class="post-list">
+      {% for post in cat_posts %}
+      <li class="post-item">
+        <article class="post-card">
+          <div class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%Y년 %m월 %d일" }}
+            </time>
+            {% if post.categories %}
+            <span class="post-categories">
+              {% for category in post.categories %}
+              <span class="category-tag">{{ category }}</span>
+              {% endfor %}
+            </span>
+            {% endif %}
+          </div>
+          <h2 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h2>
+          <p class="post-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          </p>
+          <a href="{{ post.url | relative_url }}" class="read-more">더 읽기 →</a>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</div>
